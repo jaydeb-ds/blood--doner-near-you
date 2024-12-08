@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+
+    }
+
+
+    /* Colors */
+:root {
+    --primary: #e63946; /* Crimson Red */
+    --secondary: #1d3557; /* Deep Blue */
+    --accent: #a8dadc; /* Soft Aqua */
+    --light: #ffffff; /* White */
+    --dark: #2d2d2d; /* Dark Grey */
+}
+
+/* Header */
+.header {
+
+    background: var(--primary);
+    color: var(--light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header a {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.header .logo span {
+    color: var(--accent);
+}
+.header .nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.header .nav a:hover {
+    color: var(--accent);
+}
+
+.below-nab{
+    width: 100px;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+  }
+
+  
+    body{
+      background-color:  #ffcccc15;
+    }
+
+    h2 {
+      margin-top: 50px;
+      text-align: center;
+      width: 99%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .form {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      
+      width: 99%;
+      height: 5rem;
+    }
+    .inputs_container{
+      /* height: ; */
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      /* background-color: red; */
+    }
+   
+    .inputs p {
+      margin-bottom: 3px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+  
+    select {
+      width: 12rem;
+      height: 30px;
+      border-radius: 8px;
+      background-color: rgba(224, 50, 73, 0.149);
+      border: transparent;
+      box-shadow: 0 5px 10px rgba(255, 0, 0, 0.477);
+      transition: all ease-in-out 0.2s;
+
+    }
+    select:hover{
+      transform: scale(1.1);
+      background-color: rgb(237, 222, 222);
+      border: 1px solid rgb(206, 89, 89);
+    }
+    button {
+      margin-top: 20px;
+      width: 8rem;
+      height: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(224, 50, 73);
+      border-radius: 10px;
+      border: transparent;
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 5px 10px rgb(245, 61, 61);
+      transition: all ease-in-out 0.2s;
+      
+    }
+    button:hover{
+      transform: scale(1.1);
+      background-color: rgb(244, 21, 21);
+    }
+    button:active{
+      transform: scale(0.8);
+    }
+    @media (width <=650px) {
+      .inputs_container{
+      width: 100%;
+      height: 12rem;
+      display: inline;
+      }
+      .inputs p {
+        margin-top: 5px;
+      }
+      .form{
+        height: 12rem;
+      }
+     
+      button {
+        width: 12rem;
+      }
+  }
+
+    .div-container {
+      width: 99%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    /* .container{
+      width: 70%;
+      justify-content: space-between;
+      align-items: ;
+    } */
+    .table thead tr th {
+      /* display: none; */
+      padding: 10px;
+      /* border: 3px solid rgb(37, 9, 45); */
+      background: rgba(231, 64, 86, 0.833);
+      /* border-radius: 5px; */
+    }
+
+    .table tbody tr td {
+      padding: 12px;
+      /* border: 1px double rgb(184, 17, 17); */
+      background: rgba(206, 231, 233, 0.692);
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    @media (width <=500px) {
+      .table tbody tr td {
+        padding: 2px;
+        font-size: 14px;
+      }
+      .table thead tr th {
+        padding: 0px;
+        /* border: 4px double black; */
+        /* border-radius: 3px; */
+        font-size: 14px;
+      }
+    }
+
+
+  </style>
+
+
+  <title> details</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+        <h1 class="logo">Blood<span>Donor</span></h1>
+        <nav class="nav">
+            <a href="/#home">Home</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Donate</a>
+            <a href="/view_doner">Doner</a>
+        </nav>
+    </div>
+</header>
+  <h2>Find doner</h2>
+  <div class="form">
+    <form action="/view_doner" method="get">
+
+      <div class="inputs_container">
+        <div class="inputs">
+          <p>District </p>
+          <select name="districtName" aria-placeholder="district" id="2">
+            <option>--select district--</option>
+            <option value="Sepahijala">Sepahijala</option>
+            <option value="Unakoti">Unakoti</option>
+            <option value="Dhalai">Dhalai</option>
+            <option value="Khowai">Khowai</option>
+            <option value="North Tripura">North Tripura</option>
+            <option value="South Tripura">South Tripura</option>
+            <option value="West Tripura">West Tripura</option>
+          </select>
+        </div>
+
+        <div class="inputs">
+          <p>Blood Group </p>
+          <select name="blood_group" aria-placeholder="blood_group" id="1">
+            <option>--select blood group--</option>
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+      
+        <!-- <input type="text" name="blood_group" placeholder="blood group"> -->
+        <button class="inputs" type="submit">Search</button>
+        <!-- <a href="/">go to add data</a> -->
+      </div>
+
+    </form>
+
+
+  </div>
+
+  <div class="div-container">
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>blood group</th>
+            <th>Phone Number</th>
+            <!-- <th>district</th> -->
+            <th> Address </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <%if(datafind.length> 0) { %>
+            <% datafind.forEach(function(datafind){%>
+              <tr>
+                <td>
+                  <%= datafind.name %>
+                </td>
+                <td>
+                  <%= datafind.age %>
+                </td>
+                <td>
+                  <%= datafind.blood %>
+                </td>
+                <td>
+                  <%= datafind.phone %>
+                </td>
+                <!-- <td>
+              <%= datafind.district %>
+            </td> -->
+                <td>
+                  <%= datafind.address %>
+                </td>
+              </tr>
+              <% }) %>
+                <% } %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

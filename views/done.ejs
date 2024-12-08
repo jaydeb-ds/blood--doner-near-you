@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Done</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+
+    h2 {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 6vw; /* Adjusts font size based on viewport width */
+      margin-top: 4vh; /* Adjusts margin based on viewport height */
+      color: #333;
+      opacity: 0;
+      animation: 0.6s title ease-in-out 1.2s forwards;
+    }
+
+    .circle {
+      stroke-dasharray: 1194;
+      stroke-dashoffset: 1194;
+      animation: circle 1s ease-in-out forwards;
+    }
+
+    .tick {
+      stroke-dasharray: 350;
+      stroke-dashoffset: 350;
+      animation: tick 0.8s ease-out 0.95s forwards;
+    }
+
+    svg {
+      width: 60vw; /* Scales SVG width based on viewport width */
+      height: 60vw; /* Scales SVG height based on viewport width */
+      max-width: 400px; /* Limits the maximum size for larger screens */
+      max-height: 400px;
+    }
+
+    .circle {
+      stroke-width: 5%;
+    }
+
+    .tick {
+      stroke-width: 6%;
+    }
+
+    .btn{
+      text-decoration: none;
+      background-color: green;
+      padding: 4px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 25px;
+      width: 150px;
+      border-radius: 10px;
+      color: white;
+      transition: all ease-in-out;
+    }
+    .btn:hover{
+      transform: scale(1.12);
+      box-shadow: 0 8px 20px rgba(172, 255, 47, 0.7);
+
+    }
+    
+
+    @keyframes circle {
+      from {
+        stroke-dashoffset: 1194;
+      }
+      to {
+        stroke-dashoffset: 2388;
+      }
+    }
+
+    @keyframes tick {
+      from {
+        stroke-dashoffset: 350;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes title {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <svg viewBox="0 0 400 400">
+    <circle fill="none" stroke="#68E534" stroke-width="20" cx="200" cy="200" r="190" class="circle" stroke-linecap="round" transform="rotate(-90 200 200)"/>
+    <polyline fill="none" stroke="#68E534" stroke-width="24" points="88,214 173,284 304,138" stroke-linecap="round" stroke-linejoin="round" class="tick" />
+  </svg>
+
+  <h2>Done</h2>
+
+
+  <a href="/" class="btn">go to home page</a><br>
+  <!-- <a href="about"> view data</a> -->
+
+</body>
+</html>
